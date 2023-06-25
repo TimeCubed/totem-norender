@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "totem-norender",
+	"version": "${version}",
+	"name": "Totem NoRender",
+	"description": "Stops the game from rendering those annoying totem pop animations.",
+	"authors": [
+		"TimeSquared"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/totem-norender/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.timesquared.norender.MainServer"
+		],
+		"client": [
+          "me.timesquared.norender.MainClient"
+		]
+	},
+	"mixins": [
+		"totem-norender.mixins.json",
+		{
+			"config": "totem-norender.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": ">=1.14 <=1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
